@@ -21,52 +21,91 @@
         <li><a href='images.html'>Images</a></li>
         <li><a href='videos.html' id='page-selected'>Videos</a></li>
         <li><a href='table.html'>Table</a></li>
+        <li><a href='email.html'>Email</a></li>
       </ul>
     </nav>
-    <button onclick="topFunction()" id="back-to-top-btn">&#8593;</button>
   </header>
+
+  <button onclick='topFunction()' id='back-to-top-btn'>&#8593;</button>
+
+  <div class='modal'>
+    <span class='close'>&times;</span>
+    <video class='modal-content' controls>
+      <source src='' type='video/mp4'>
+    </video>
+  </div>
 
   <div class='container'>
     <h1>Videos.</h1>
     <br/>
     <p>
-      I couldn't think of any good videos so these are rick roll videos. 
-      I can't imagine how many other people sent in videos of rick rolls so I'm warning you.
-      The other two are just parody versions of rick rolls.
-      You should probably mute.
+      I couldn't think of any good videos so these are all rick roll videos.
+      You should probably mute. I'm warning you!
     </p>
     <div class='featured-section'>
-      <video width='320' height='240px' controls>
+      <video class='featured' width='300px' height='200px' controls>
         <source src='videos/rick-1.mp4' type='video/mp4'>
       </video>
-      <video width='320' height='240px' controls>
+      <video class='featured' width='300px' height='200px' controls>
         <source src='videos/rick-2.mp4' type='video/mp4'>
       </video>
-      <video width='320' height='240px' controls>
+      <video class='featured' width='300px' height='200px' controls>
         <source src='videos/rick-3.mp4' type='video/mp4'>
       </video>
+      <video class='featured' width='300px' height='200px' controls>
+        <source src='videos/rick-4.mp4' type='video/mp4'>
+      </video>
     </div>
+    <br/>
+    <p>*Click play button to play in place or click video to enlarge*</p>
   </div>
   <script>
-    //Get the button
-    var mybutton = document.getElementById("back-to-top-btn");
+    // inspired by https://www.w3schools.com/howto/howto_js_scroll_to_top.asp
+    var backToTopBtn = document.getElementById('back-to-top-btn');
     
-    // When the user scrolls down 20px from the top of the document, show the button
     window.onscroll = () => scrollFunction();
     
     function scrollFunction() {
       if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        mybutton.style.display = "block";
+        backToTopBtn.style.display = 'block';
       } else {
-        mybutton.style.display = "none";
+        backToTopBtn.style.display = 'none';
       }
     }
     
-    // When the user clicks on the button, scroll to the top of the document
     function topFunction() {
       document.body.scrollTop = 0;
       document.documentElement.scrollTop = 0;
     }
-    </script>
+
+    // inspired by https://www.w3schools.com/howto/howto_css_modal_images.asp
+    let modal = document.getElementsByClassName('modal')[0];
+    let modalVideo = document.getElementsByClassName('modal-content')[0];
+    let videos = document.getElementsByClassName('featured');
+    for (let i = 0; i < videos.length; i++) {
+      videos[i].onclick = function(){
+        videos[i].play();
+        modal.style.display = 'block';
+        modalVideo.src = videos[i].getElementsByTagName('source')[0].src;
+        console.log(modalVideo.src);
+        backToTopBtn.style.display = 'none';
+      }
+    }
+
+    let span = document.getElementsByClassName('close')[0];
+
+    span.onclick = function() { 
+      modal.style.display = 'none';
+      modalVideo.pause();
+      scrollFunction();
+    }
+
+    modal.addEventListener('click', (e) => {
+      if (e.target !== modalVideo) {
+        modal.style.display = 'none';
+        scrollFunction();
+      }
+    });
+  </script>
 </body>
 </html>
