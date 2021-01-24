@@ -41,10 +41,9 @@
     <p id='validation'></p>
   </div>
   <script>
-    //Get the button
+    // inspired by https://www.w3schools.com/howto/howto_js_scroll_to_top.asp
     var backToTopBtn = document.getElementById('back-to-top-btn');
     
-    // When the user scrolls down 20px from the top of the document, show the button
     window.onscroll = () => scrollFunction();
     
     function scrollFunction() {
@@ -55,13 +54,13 @@
       }
     }
     
-    // When the user clicks on the button, scroll to the top of the document
     function topFunction() {
       document.body.scrollTop = 0;
       document.documentElement.scrollTop = 0;
     }
 
     function validateEmail(email) {
+      // https://stackoverflow.com/questions/46155/how-to-validate-an-email-address-in-javascript
       const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
       return re.test(email);
     }
@@ -70,10 +69,10 @@
     let validation = document.getElementById('validation');
     function handleForm(event) { 
       event.preventDefault(); 
-      if (validateEmail(form["email"].value)) {
-        validation.innerHTML = "Email successfully recorded";
+      if (validateEmail(form['email'].value)) {
+        validation.innerHTML = 'Email successfully recorded!';
       } else {
-        validation.innerHTML = "Invalid email address";
+        validation.innerHTML = 'Invalid email address!';
       }
     } 
     form.addEventListener('submit', handleForm);
