@@ -1,4 +1,5 @@
 /* https://www.w3schools.com/howto/howto_js_scroll_to_top.asp */
+/* https://www.w3schools.com/howto/howto_css_modal_images.asp */
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap');
 
@@ -81,6 +82,10 @@ header {
   border-radius: 8px;
 }
 
+#page-selected:hover {
+  border-color: rgba(0,136,169,0.8);
+}
+
 @media (max-width: 800px) {
   header {
     flex-direction: column;
@@ -116,14 +121,14 @@ button:hover {
   background-color: rgba(0,136,169,0.8);
 }
 
-img {
+.featured-image {
   height: 168px;
   width: auto;
   margin-bottom: 15px;
   margin-right: 15px;
 }
 
-img:hover {
+.featured-image:hover {
   opacity: 0.7;
 }
 
@@ -131,29 +136,78 @@ img:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
 }
 
 @media (max-width: 1360px) {
-  img {
+  .featured-image {
     height: 230px;
     width: auto;
   }
 }
 
 @media (max-width: 924px) {
-  img {
+  .featured-image {
     height: 168px;
     width: auto;
   }
 }
 
 @media (max-width: 660px) {
-  img {
+  .featured-image {
     height: auto;
     width: 80%;
   }
-  .featured-section {
+  .featured-image-section {
     justify-content: center;
+  }
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  height: 80%;
+  width: auto;
+}
+
+.modal-content:hover {
+  opacity: 1;
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  font-size: 40px;
+  background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+}
+
+.close:hover, .close:focus{
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    height: auto;
+    width: 100%;
   }
 }
 

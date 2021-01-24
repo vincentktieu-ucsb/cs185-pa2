@@ -20,10 +20,10 @@
         <li><a href='index.html'>Text</a></li>
         <li><a href='images.html'>Images</a></li>
         <li><a href='videos.html'>Videos</a></li>
-        <li><a href='table.html' id="page-selected">Table</a></li>
+        <li><a href='table.html' id='page-selected'>Table</a></li>
       </ul>
     </nav>
-    <button onclick="topFunction()" id="back-to-top-btn">&#8593;</button>
+    <button onclick='topFunction()' id='back-to-top-btn'>&#8593;</button>
   </header>
 
   <div class='container'>
@@ -31,7 +31,7 @@
     <br/>
     <p>Vincent's Ice Cream Tier List</p>
     <br/>
-    <i>* Click links to see Baskin Robbin's Description *</i>
+    <p>Z</p><i>* Click links to see Baskin Robbin's Description *</i></p>
     <table>
       <tr>
         <th>Ice Cream Flavor</th>
@@ -117,16 +117,16 @@
   </div>
   <script>
     //Get the button
-    var mybutton = document.getElementById("back-to-top-btn");
+    var backToTopBtn = document.getElementById('back-to-top-btn');
     
     // When the user scrolls down 20px from the top of the document, show the button
     window.onscroll = () => scrollFunction();
     
     function scrollFunction() {
       if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        mybutton.style.display = "block";
+        backToTopBtn.style.display = 'block';
       } else {
-        mybutton.style.display = "none";
+        backToTopBtn.style.display = 'none';
       }
     }
     
@@ -135,6 +135,6 @@
       document.body.scrollTop = 0;
       document.documentElement.scrollTop = 0;
     }
-    </script>
+  </script>
 </body>
 </html>

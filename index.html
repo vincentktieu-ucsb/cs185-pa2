@@ -24,9 +24,9 @@
         <li><a href='table.html'>Table</a></li>
       </ul>
     </nav>
-    <button onclick="topFunction()" id="back-to-top-btn">&#8593;</button>
+    <button onclick='topFunction()' id='back-to-top-btn'>&#8593;</button>
   </header>
-
+  
   <div class='container'>
     <h1>Text.</h1>
     <br/>
@@ -49,16 +49,16 @@
   </div>
   <script>
     //Get the button
-    var mybutton = document.getElementById("back-to-top-btn");
+    var backToTopBtn = document.getElementById('back-to-top-btn');
     
     // When the user scrolls down 20px from the top of the document, show the button
     window.onscroll = () => scrollFunction();
     
     function scrollFunction() {
       if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        mybutton.style.display = "block";
+        backToTopBtn.style.display = 'block';
       } else {
-        mybutton.style.display = "none";
+        backToTopBtn.style.display = 'none';
       }
     }
     
@@ -67,6 +67,6 @@
       document.body.scrollTop = 0;
       document.documentElement.scrollTop = 0;
     }
-    </script>
+  </script>
 </body>
 </html>
