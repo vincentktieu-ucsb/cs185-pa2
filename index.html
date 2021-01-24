@@ -18,12 +18,13 @@
     <h3 class='nav-brand'>Vincent Tieu's PA2</h3>
     <nav>
       <ul class='nav-links'>
-        <li><a href='index.html'>Text</a></li>
+        <li><a href='index.html' id='page-selected'>Text</a></li>
         <li><a href='images.html'>Images</a></li>
         <li><a href='videos.html'>Videos</a></li>
         <li><a href='table.html'>Table</a></li>
       </ul>
     </nav>
+    <button onclick="topFunction()" id="back-to-top-btn">&#8593;</button>
   </header>
 
   <div class='container'>
@@ -46,5 +47,26 @@
       <button type='submit' value='Submit'>Done</button>
     </form>
   </div>
+  <script>
+    //Get the button
+    var mybutton = document.getElementById("back-to-top-btn");
+    
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = () => scrollFunction();
+    
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+    
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+    </script>
 </body>
 </html>
