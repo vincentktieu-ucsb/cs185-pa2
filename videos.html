@@ -102,6 +102,13 @@
       modalVideo.pause();
       scrollFunction();
     }
+
+    modal.addEventListener('click', (e) => {
+      if (e.target !== modalVideo) {
+        modal.style.display = 'none';
+        scrollFunction();
+      }
+    });
   </script>
 </body>
 </html>

@@ -25,7 +25,7 @@
       </ul>
     </nav>
   </header>
-  
+
   <button onclick='topFunction()' id='back-to-top-btn'>&#8593;</button>
 
   <div class='modal'>
@@ -42,8 +42,7 @@
     <p>
       Among my favorite digital games are Legends of Runeterra, Hearthstone, and Chess. I wish
       I could play any of these games at a more competitive level but I like to think
-      that I'm still pretty decent. (In Hearthstone, I was once ranked top 626 of all players! 
-      In chess, I hit 1420, which is the 92% percent tile!).
+      that I'm still pretty decent. (In Hearthstone, I was once ranked top 626 of all players!).
     </p>
     <br/>
     <div class='featured-section'>
@@ -57,12 +56,12 @@
       <img src='img/chess-2.jpeg' class='featured-image'>
     </div>
     <br/>
+    <p>*Click image to enlarge*</p>
+    <br/>
     <p>
       Among my favorite physical games are Monopoly Deal, Unstable Unicorns, and Rival 
       Restaurants. During quarantine, my family was looking for new ways to pass time
-      besides watching Netflix. Since I enjoyed these digital games, I introducted them
-      to these games and we've played them a ton ever since. What's best is that even
-      my 8 year old cousin can join in on the fun!
+      besides watching Netflix. We've found that board games work great!
     </p>
     <br/>
     <div class='featured-section'>
@@ -76,8 +75,10 @@
       <img src='img/rival-3.jpg' class='featured-image'>
       <img src='img/rival-4.jpg' class='featured-image'>
     </div>
+    <br/>
+    <p>*Click image to enlarge*</p>
+    <br/>
   </div>
-  <br/>
   <br/>
   <script>
     //Get the button
@@ -119,6 +120,13 @@
       modal.style.display = 'none';
       scrollFunction();
     }
+
+    modal.addEventListener('click', (e) => {
+      if (e.target !== modalImg) {
+        modal.style.display = 'none';
+        scrollFunction();
+      }
+    });
   </script>
 </body>
 </html>

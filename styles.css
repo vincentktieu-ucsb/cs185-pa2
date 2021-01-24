@@ -1,5 +1,6 @@
 /* https://www.w3schools.com/howto/howto_js_scroll_to_top.asp */
 /* https://www.w3schools.com/howto/howto_css_modal_images.asp */
+/* https://stackoverflow.com/questions/46155/how-to-validate-an-email-address-in-javascript */
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap');
 
@@ -179,6 +180,7 @@ button:hover {
 
 /* Modal Content (image) */
 .modal-content {
+  border: 1px solid white;
   margin: auto;
   display: block;
   height: 80%;
@@ -217,7 +219,7 @@ table {
 }
 
 td, th {
-  border: 1px solid #dddddd;
+  border: 1px solid white;
   text-align: left;
   padding: 8px;
 }
@@ -228,5 +230,5 @@ td a {
 }
 
 tr:nth-child(even) {
-  background-color: #dddddd;
+  background-color: white;
 }
