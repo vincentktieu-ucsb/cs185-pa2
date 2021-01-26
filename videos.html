@@ -82,12 +82,14 @@
     let modal = document.getElementsByClassName('modal')[0];
     let modalVideo = document.getElementsByClassName('modal-content')[0];
     let videos = document.getElementsByClassName('featured');
+    let activeVideo;
     for (let i = 0; i < videos.length; i++) {
       videos[i].onclick = function(){
+        activeVideo = videos[i];
         videos[i].play();
         modal.style.display = 'block';
-        modalVideo.src = videos[i].getElementsByTagName('source')[0].src;
-        console.log(modalVideo.src);
+        modalVideo.src = activeVideo.getElementsByTagName('source')[0].src;
+        modalVideo.currentTime = activeVideo.currentTime;
         backToTopBtn.style.display = 'none';
       }
     }
@@ -97,12 +99,15 @@
     span.onclick = function() { 
       modal.style.display = 'none';
       modalVideo.pause();
+      activeVideo.currentTime = modalVideo.currentTime;
       scrollFunction();
     }
 
     modal.addEventListener('click', (e) => {
       if (e.target !== modalVideo) {
         modal.style.display = 'none';
+        modalVideo.pause();
+        activeVideo.currentTime = modalVideo.currentTime;
         scrollFunction();
       }
     });
