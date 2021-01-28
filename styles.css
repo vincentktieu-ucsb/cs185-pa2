@@ -155,7 +155,7 @@ button:hover {
     height: auto;
     width: 80%;
   }
-  .featured-image-section {
+  .featured-section {
     justify-content: center;
   }
 }
@@ -174,13 +174,22 @@ button:hover {
   background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
 }
 
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
 /* Modal Content (image) */
 .modal-content {
   border: 1px solid white;
   margin: auto;
   display: block;
-  height: 80%;
-  width: auto;
+  height: 100%;
+  width: 100%;
 }
 
 .modal-content:hover {
@@ -201,12 +210,11 @@ button:hover {
   cursor: pointer;
 }
 
-/* 100% Image Width on Smaller Screens */
-@media only screen and (max-width: 700px){
-  .modal-content {
-    height: auto;
-    width: 80vw;
-  }
+.modal-content {
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  width: 80vw;
 }
 
 table {
